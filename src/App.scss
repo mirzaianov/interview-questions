@@ -5,8 +5,59 @@
   // text-align: center;
 }
 
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  width: 30%;
+}
+
+p {
+  background-color: lightgray;
+  margin: 0;
+  padding: 10px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+ul {
+  background-color: lightgray;
+  margin: 0;
+  padding: 10px;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-block: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: lightblue;
+  padding: 0.5em 2em;
+  border-radius: 100px;
+  border: none;
+  &:hover {
+    background-color: darken($main-color, 10%);
+    transition: 0.3s;
+  }
+}
+
 .App {
   max-width: 900px;
   width: 90%;
   margin: 0 auto;
+}
+
+.component {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-block: 10px;
+}
+
+.IncrementDecrement {
+  display: flex;
+  gap: 10px;
 }

@@ -27,34 +27,24 @@ const listData = [
   { id: 30, name: 'Element 30', parentId: 27 },
 ];
 
-const getChildren = (parentId) => {
-  return listData
-    .filter((el) => el.parentId === parentId)
-    .map((obj) => (
-      <li key={obj.id}>
-        {obj.name}
-        <ul>{getChildren(obj.id)}</ul>
-      </li>
-    ));
-};
+const getChildren = (parentId) => (
+  <ul>
+    {listData
+      .filter((el) => el.parentId === parentId)
+      .map((obj) => (
+        <li key={obj.id}>
+          {obj.name}
+          <ul>{getChildren(obj.id)}</ul>
+        </li>
+      ))}
+  </ul>
+);
 
 const ArrayToTree2 = () => {
   return (
-    <div
-      className="ArrayToTree2"
-      style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}
-    >
+    <div className="ArrayToTree2 component">
       <h3>3. Render a recursive list: </h3>
-      <ul
-        style={{
-          backgroundColor: 'lightgray',
-          padding: '10px',
-          borderRadius: '5px',
-          paddingLeft: '30px',
-        }}
-      >
-        {getChildren(null)}
-      </ul>
+      {getChildren(null)}
     </div>
   );
 };

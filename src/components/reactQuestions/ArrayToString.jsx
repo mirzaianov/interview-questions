@@ -31,21 +31,9 @@ const calc = (array) => {
 
 const ArrayToString = () => {
   return (
-    <div
-      className="ArrayToString"
-      style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
-    >
+    <div className="ArrayToString component">
       <h3>1. Create a string: </h3>
-      <p
-        style={{
-          backgroundColor: 'lightgray',
-          padding: '10px',
-          borderRadius: '5px',
-          paddingLeft: '10px',
-        }}
-      >
-        {calc(data)}
-      </p>
+      <p>{calc(data)}</p>
     </div>
   );
 };

@@ -32,29 +32,10 @@ const FetchData = () => {
     );
 
   return (
-    <div
-      className="FetchData"
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px',
-        alignItems: 'flex-start',
-      }}
-    >
-      <div style={{ display: 'flex', gap: '10px' }}>
-        <h3>4. Fetch data: </h3>
-        <button>Fetch data</button>
-      </div>
-      <ul
-        style={{
-          backgroundColor: 'lightgray',
-          padding: '10px',
-          borderRadius: '5px',
-          paddingLeft: '30px',
-        }}
-      >
-        {list(items)}
-      </ul>
+    <div className="FetchData component">
+      <h3>4. Fetch data: </h3>
+      {/* <button>Fetch data</button> */}
+      <ul>{list(items)}</ul>
     </div>
   );
 };

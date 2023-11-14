@@ -1,4 +1,4 @@
-const data = [
+const info = [
   {
     id: 1,
     name: 'Node 1',
@@ -46,14 +46,7 @@ const data = [
 ];
 
 const render = (data) => (
-  <ul
-    style={{
-      backgroundColor: 'lightgray',
-      padding: '10px',
-      borderRadius: '5px',
-      paddingLeft: '30px',
-    }}
-  >
+  <ul>
     {data.map((item) => (
       <li key={item.id}>
         {item.name}
@@ -65,12 +58,9 @@ const render = (data) => (
 
 const ArrayToTree1 = () => {
   return (
-    <div
-      className="ArrayToTree1"
-      style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}
-    >
+    <div className="ArrayToTree1 component">
       <h3>2. Render a recursive list: </h3>
-      {render(data)}
+      {render(info)}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import ArrayToTree1 from './components/reactQuestions/ArrayToTree1';
 import ArrayToTree2 from './components/reactQuestions/ArrayToTree2';
 import DomDepth from './components/reactQuestions/DomDepth';
 import FetchData from './components/reactQuestions/FetchData';
+import IncrementDecrement from './components/reactQuestions/IncrementDecrement';
 
 import './App.scss';
 
@@ -16,6 +17,7 @@ export default function App() {
       {/* TODO: fix the tree */}
       {/* <DomDepth /> */}
       <FetchData />
+      <IncrementDecrement />
     </div>
   );
 }
