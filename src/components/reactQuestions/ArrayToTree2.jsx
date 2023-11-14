@@ -41,7 +41,7 @@ const getChildren = (parentId) => {
 const ArrayToTree2 = () => {
   return (
     <div
-      className="ArrayToTree1"
+      className="ArrayToTree2"
       style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}
     >
       <h3>3. Render a recursive list: </h3>

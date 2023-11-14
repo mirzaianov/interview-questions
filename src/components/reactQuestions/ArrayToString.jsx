@@ -35,7 +35,7 @@ const ArrayToString = () => {
       className="ArrayToString"
       style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
     >
-      <h3>1. Create a string following instructions: </h3>
+      <h3>1. Create a string: </h3>
       <p
         style={{
           backgroundColor: 'lightgray',

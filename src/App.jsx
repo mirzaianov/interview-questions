@@ -1,7 +1,8 @@
-import ArrayToString from './components/jsQuestions/ArrayToString';
-
+import ArrayToString from './components/reactQuestions/ArrayToString';
 import ArrayToTree1 from './components/reactQuestions/ArrayToTree1';
 import ArrayToTree2 from './components/reactQuestions/ArrayToTree2';
+import DomDepth from './components/reactQuestions/DomDepth';
+import FetchData from './components/reactQuestions/FetchData';
 
 import './App.scss';
 
@@ -12,6 +13,9 @@ export default function App() {
       <ArrayToString />
       <ArrayToTree1 />
       <ArrayToTree2 />
+      {/* TODO: fix the tree */}
+      {/* <DomDepth /> */}
+      <FetchData />
     </div>
   );
 }
