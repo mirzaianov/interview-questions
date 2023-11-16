@@ -14,10 +14,9 @@ export default function App() {
       <ArrayToString />
       <ArrayToTree1 />
       <ArrayToTree2 />
-      {/* TODO: fix the tree */}
-      {/* <DomDepth /> */}
       <FetchData />
       <IncrementDecrement />
+      <DomDepth />
     </div>
   );
 }
