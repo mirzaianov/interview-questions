@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const DomDepth = () => {
   const [depth, setDepth] = useState(0);
 
-  const app = document.querySelector('.depth');
+  const ref = useRef(null);
 
   const treeDepth = (divElement, currentLevel) => {
     if (divElement.children.length === 0) return currentLevel;
@@ -14,7 +14,6 @@ const DomDepth = () => {
 
     Array.from(divElement.children).forEach((element) => {
       maxDepth = Math.max(treeDepth(element, currentLevel), maxDepth);
-      console.log(currentLevel, maxDepth);
     });
 
     return maxDepth;
@@ -22,7 +21,6 @@ const DomDepth = () => {
 
   const handleDepth = (target, lvl) => {
     const value = treeDepth(target, lvl);
-    console.log('value >>', value);
 
     setDepth(value);
   };
@@ -30,7 +28,10 @@ const DomDepth = () => {
   return (
     <div className="DomDepth component">
       <h3>6. The Dom Depth: </h3>
-      <div className="depth">
+      <div
+        className="depth"
+        ref={ref}
+      >
         <div>
           1
           <div>
@@ -111,7 +112,7 @@ const DomDepth = () => {
           </div>
         </div>
       </div>
-      <button onClick={() => handleDepth(app, 0)}>Tree Depth</button>
+      <button onClick={() => handleDepth(ref.current, 0)}>Tree Depth</button>
       <p>{depth}</p>
     </div>
   );
