@@ -12,7 +12,7 @@ h4 {
 }
 
 h3 {
-  width: 30%;
+  min-width: 30%;
 }
 
 p {
@@ -57,7 +57,13 @@ button {
   margin-block: 10px;
 }
 
-.IncrementDecrement {
+.IncrementDecrement > h4 {
+  align-self: center;
+}
+
+.FetchData > div {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
 }

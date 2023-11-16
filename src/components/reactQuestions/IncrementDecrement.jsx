@@ -12,7 +12,7 @@ export default function IncrementDecrement() {
   };
 
   return (
-    <div className="IncrementDecrement">
+    <div className="IncrementDecrement component">
       <h3>5. Increment - Decrement: </h3>
       <button onClick={decrement}>-</button>
       <h4>Value: {value}</h4>

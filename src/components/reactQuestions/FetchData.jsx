@@ -1,24 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const FetchData = () => {
   const [items, setItems] = useState(null);
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const response = await fetch(
-          'https://jsonplaceholder.typicode.com/posts',
-        );
-        const data = await response.json();
+  const fetchItems = async () => {
+    try {
+      const response = await fetch(
+        'https://jsonplaceholder.typicode.com/posts',
+      );
+      const data = await response.json();
 
-        setItems(data);
-      } catch (error) {
-        console.log('error >>', error);
-      }
-    };
-
-    fetchItems();
-  }, []);
+      setItems(data);
+    } catch (error) {
+      console.log('error >>', error);
+    }
+  };
 
   const list = (data) =>
     data &&
@@ -34,8 +30,10 @@ const FetchData = () => {
   return (
     <div className="FetchData component">
       <h3>4. Fetch data: </h3>
-      {/* <button>Fetch data</button> */}
-      <ul>{list(items)}</ul>
+      <div>
+        <button onClick={() => fetchItems()}>Fetch data</button>
+        <ul>{list(items)}</ul>
+      </div>
     </div>
   );
 };
