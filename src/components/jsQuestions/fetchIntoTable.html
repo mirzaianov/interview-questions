@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScript fetch into Table</h1>
+  <script>
+    const table = document.createElement('table');
+    table.style.borderCollapse = 'collapse';
+
+    const trow = document.createElement('tr');
+    table.appendChild(trow);
+
+    const thead1 = document.createElement('th');
+    thead1.innerText = 'userId';
+    thead1.style.border = '1px solid blue';
+    trow.appendChild(thead1);
+
+    const thead2 = document.createElement('th');
+    thead2.innerText = 'id';
+    thead2.style.border = '1px solid blue';
+    trow.appendChild(thead2);
+
+    const thead3 = document.createElement('th');
+    thead3.innerText = 'title';
+    thead3.style.border = '1px solid blue';
+    trow.appendChild(thead3);
+
+    const thead4 = document.createElement('th');
+    thead4.innerText = 'body';
+    thead4.style.border = '1px solid blue';
+    trow.appendChild(thead4);
+
+    document.body.append(table);
+
+    fetch('https://jsonplaceholder.typicode.com/posts').
+      then(response => response.json()).
+      then(data => {
+        for (let i = 0; i < 10; i += 1) {
+          const item = data[i];
+
+          const tr = document.createElement('tr');
+          table.appendChild(tr);
+
+          const td1 = document.createElement('td');
+          td1.style.border = '1px solid black';
+          td1.innerText = item.userId;
+          tr.appendChild(td1);
+
+          const td2 = document.createElement('td');
+          td2.style.border = '1px solid black';
+          td2.innerText = item.id;
+          tr.appendChild(td2);
+
+          const td3 = document.createElement('td');
+          td3.style.border = '1px solid black';
+          td3.innerText = item.title;
+          tr.appendChild(td3);
+
+          const td4 = document.createElement('td');
+          td4.style.border = '1px solid black';
+          td4.innerText = item.body;
+          tr.appendChild(td4);
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  </script>
+</body>
+</html>
