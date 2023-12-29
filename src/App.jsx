@@ -4,6 +4,7 @@ import ArrayToTree2 from './components/reactQuestions/ArrayToTree2';
 import DomDepth from './components/reactQuestions/DomDepth';
 import FetchData from './components/reactQuestions/FetchData';
 import IncrementDecrement from './components/reactQuestions/IncrementDecrement';
+import CarData from './components/reactQuestions/CarData';
 
 import './App.scss';
 
@@ -17,6 +18,7 @@ export default function App() {
       <FetchData />
       <IncrementDecrement />
       <DomDepth />
+      <CarData />
     </div>
   );
 }
