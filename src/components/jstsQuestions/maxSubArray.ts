@@ -9,15 +9,13 @@ const maxSubArray = (nums: number[]): number => {
 
   while (right < nums.length) {
     if (set.has(nums[right])) {
-      while (nums[left] !== nums[right]) {
-        set.delete(nums[left]);
-        left += 1;
-      }
+      set.delete(nums[left]);
+      left += 1;
+    } else {
+      set.add(nums[right]);
+      max = Math.max(max, set.size);
+      right += 1;
     }
-
-    set.add(nums[right]);
-    max = Math.max(max, set.size);
-    right += 1;
   }
 
   return max;
