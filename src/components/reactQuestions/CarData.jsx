@@ -37,7 +37,7 @@ export default function CarData() {
 
   return (
     <div className="CarData component">
-      <h3>2. Car data: </h3>
+      <h3>7. Car data: </h3>
       <p>По кнопке покупать случайную машину и помещать ее в гараж</p>
       <CarsView carsList={carsList} />
       <button onClick={pickCar}>Купить машину</button>

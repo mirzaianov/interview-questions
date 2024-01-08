@@ -5,6 +5,7 @@ import DomDepth from './components/reactQuestions/DomDepth';
 import FetchData from './components/reactQuestions/FetchData';
 import IncrementDecrement from './components/reactQuestions/IncrementDecrement';
 import CarData from './components/reactQuestions/CarData';
+import RandomColor from './components/reactQuestions/RandomColor';
 
 import './App.scss';
 
@@ -19,6 +20,7 @@ export default function App() {
       <IncrementDecrement />
       <DomDepth />
       <CarData />
+      <RandomColor />
     </div>
   );
 }

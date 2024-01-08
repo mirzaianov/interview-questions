@@ -48,6 +48,7 @@ button {
   max-width: 900px;
   width: 90%;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .component {
@@ -72,4 +73,10 @@ button {
   border-radius: 5px;
   padding-left: 5px;
   background-color: rgba(75, 169, 60, 0.253);
+}
+
+.RandomColor .generated-color {
+  width: 250px;
+  height: 100px;
+  border-radius: 16px;
 }
