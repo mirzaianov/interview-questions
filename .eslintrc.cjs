@@ -27,6 +27,7 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     'no-bitwise': 0,
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
-    'react/prop-types': 'off',
+    'react/prop-types': 0,
+    'no-extend-native': 0,
   },
 };
