@@ -80,3 +80,18 @@ button {
   height: 100px;
   border-radius: 16px;
 }
+
+.CardsView {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.Card {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background-color: lightgray;
+  gap: 4px;
+}
