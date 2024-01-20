@@ -4,6 +4,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'airbnb-base',
+    'airbnb-typescript/base',
     'prettier',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -12,7 +13,11 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: './tsconfig.json',
+  },
   settings: { react: { version: '18.2' } },
   rules: {
     // 'no-console': ['error', { allow: ['warn', 'error'] }],
