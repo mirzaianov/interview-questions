@@ -1,24 +1,47 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const URL = 'https://jsonplacholder.typicode.com/posts';
 
 const FetchData = () => {
-  const [items, setItems] = useState(null);
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const fetchItems = async () => {
-    try {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/posts',
-      );
-      const data = await response.json();
+  const dataFetch = (url) => {
+    let cancelled = false;
+    let data = null;
+    let error = null;
 
-      setItems(data);
-    } catch (error) {
-      console.log('error >>', error);
-    }
+    setIsLoading(true);
+    setData(null);
+    setError(null);
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((respData) => {
+        if (!cancelled) data = respData;
+      })
+      .catch((e) => {
+        if (!cancelled) error = e;
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setData(data);
+          setError(error);
+          setIsLoading(false);
+        }
+      });
+
+    return () => (cancelled = true);
   };
 
-  const list = (data) =>
-    data &&
-    data.map((item, index) =>
+  useEffect(() => {
+    dataFetch();
+  }, []);
+
+  const List = ({ items }) =>
+    items &&
+    items.map((item, index) =>
       index < 5 ? (
         <li key={item.id}>
           <h4>{item.title}</h4>
@@ -31,8 +54,8 @@ const FetchData = () => {
     <div className="FetchData component">
       <h3>4. Fetch data: </h3>
       <div>
-        <button onClick={() => fetchItems()}>Fetch data</button>
-        <ul>{list(items)}</ul>
+        <button onClick={() => dataFetch(URL)}>Fetch data</button>
+        <List items={data} />
       </div>
     </div>
   );

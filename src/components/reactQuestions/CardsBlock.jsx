@@ -75,7 +75,6 @@ const cards = [
 ];
 
 const CardsBlock = () => {
-  console.log('CardsBlock');
   const [cardsList, setCarsList] = useState(cards);
 
   return (
@@ -87,7 +86,6 @@ const CardsBlock = () => {
 };
 
 const CardsView = ({ cardsList }) => {
-  console.log('CardsView');
   return (
     <div className="CardsView">
       {cardsList.map((item, index) => (
@@ -105,7 +103,6 @@ const CardsView = ({ cardsList }) => {
 };
 
 const Card = ({ name, breed, url, description, age }) => {
-  console.log('Card');
   return (
     <div className="Card">
       <h4 className="heading">{name}</h4>
