@@ -7,6 +7,7 @@ import IncrementDecrement from './components/reactQuestions/IncrementDecrement';
 import CarData from './components/reactQuestions/CarData';
 import RandomColor from './components/reactQuestions/RandomColor';
 import CardsBlock from './components/reactQuestions/CardsBlock';
+import Timer from './components/reactQuestions/Timer';
 
 import './App.scss';
 
@@ -23,6 +24,7 @@ export default function App() {
       <CarData />
       <RandomColor />
       <CardsBlock />
+      <Timer />
     </div>
   );
 }
