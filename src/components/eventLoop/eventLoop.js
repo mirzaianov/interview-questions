@@ -10,3 +10,7 @@ new Promise((resolve, reject) => {
 }).then((res) => console.log(res));
 
 console.log('lime');
+
+/**
+ * apple, orange, lime, melon, pineapple, pear
+ */
