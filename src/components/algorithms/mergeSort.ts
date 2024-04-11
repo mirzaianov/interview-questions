@@ -8,6 +8,7 @@ const merge = (left: number[], right: number[]): number[] => {
       result.push(right.shift()!);
     }
   }
+
   return [...result, ...left, ...right];
 };
 
