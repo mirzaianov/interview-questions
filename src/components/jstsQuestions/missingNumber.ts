@@ -4,8 +4,7 @@
  *  Below there are input array conditions and the function's behavoir according to my understanding of the task explanation:
  *
  *  1. The array contains only integers, -2^31 <= nums[i] <= 2^31 - 1.
- *  2. There might be more than 1 missing number in the array, but the function must return the
- *  first occurance in the sequence (as if the array were sorted).
+ *  2. There might be more than 1 missing number in the array, but the function must return the first occurance in the sequence (as if the array were sorted).
  *  3. The array might be without missing numbers. In this case the function must return -1.
  *  4. The numbers are sequent by 1, except for the missing numbers.
  *  5. The array might have duplicate numbers.
@@ -71,7 +70,7 @@ const missingNumber = (nums: number[]): number => {
  *   " Given an array nums containing n distinct numbers in the range [0, n],
  *     return the only number in the range that is missing from the array. "
  *
- *  then the solution would be much easier.
+ *  then the solution would be this.
  *
  *  Time O(N) | Space O(1)
  *  const missingNumber = (nums: number[]): number => {
