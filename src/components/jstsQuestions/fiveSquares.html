@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .square {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        border: 1px solid black;
+      }
+
+      .square > div {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: aquamarine;
+        display: grid;
+        place-items: center;
+      }
+
+      .square > div:nth-child(1) {
+        /* Left Top */
+        top: 0;
+        left: 0;
+      }
+
+      .square > div:nth-child(2) {
+        /* Right Top */
+        top: 0;
+        right: 0;
+      }
+
+      .square > div:nth-child(3) {
+        /* Center */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .square > div:nth-child(4) {
+        /* Left Bottom */
+        bottom: 0;
+        left: 0;
+      }
+
+      .square > div:nth-child(5) {
+        /* Right Bottom */
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="square">
+      <div>Left Top</div>
+      <div>Right Top</div>
+      <div>Center</div>
+      <div>Left Bottom</div>
+      <div>Right Bottom</div>
+    </div>
+  </body>
+</html>
