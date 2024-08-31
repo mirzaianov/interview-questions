@@ -1,43 +1,11 @@
-import { useEffect, useState } from 'react';
+import useFetch from '../hooks/useFetch';
 
-const URL = 'https://jsonplacholder.typicode.com/posts';
+const URL = 'https://jsonplaceholder.typicode.com/posts';
 
 const FetchData = () => {
-  const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [data, isLoading, error] = useFetch(URL);
 
-  const dataFetch = (url) => {
-    let cancelled = false;
-    let data = null;
-    let error = null;
-
-    setIsLoading(true);
-    setData(null);
-    setError(null);
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((respData) => {
-        if (!cancelled) data = respData;
-      })
-      .catch((e) => {
-        if (!cancelled) error = e;
-      })
-      .finally(() => {
-        if (!cancelled) {
-          setData(data);
-          setError(error);
-          setIsLoading(false);
-        }
-      });
-
-    return () => (cancelled = true);
-  };
-
-  useEffect(() => {
-    dataFetch();
-  }, []);
+  console.log(data, isLoading, error);
 
   const List = ({ items }) =>
     items &&
@@ -54,7 +22,7 @@ const FetchData = () => {
     <div className="FetchData component">
       <h3>4. Fetch data: </h3>
       <div>
-        <button onClick={() => dataFetch(URL)}>Fetch data</button>
+        {/* <button onClick={() => dataFetch(URL)}>Fetch data</button> */}
         <List items={data} />
       </div>
     </div>
