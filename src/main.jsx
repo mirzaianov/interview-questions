@@ -5,6 +5,10 @@ import App from './App.jsx';
 
 import './index.scss';
 
+// import { fetchMultipleURLs } from './components/jstsQuestions/promise';
+
+// fetchMultipleURLs();
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <App />,
