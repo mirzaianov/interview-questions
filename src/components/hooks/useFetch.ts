@@ -33,7 +33,7 @@ const useFetch = (
         }
 
         // Fetch Error
-        // Check whether there are nwetwork issues
+        // Check whether there are network issues
       } catch (e) {
         if (isMounted) {
           setError(e instanceof Error ? e : new Error('An unknown error!'));

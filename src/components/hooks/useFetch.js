@@ -39,4 +39,4 @@ const useFetch = (url) => {
   return [data, isLoading, error];
 };
 
-export default useFetch;
+console.log(useFetch('https://jsonplaceholder.typicode.com/posts'));
