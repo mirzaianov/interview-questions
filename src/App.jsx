@@ -2,7 +2,7 @@ import ArrayToString from './components/reactQuestions/ArrayToString';
 import ArrayToTree1 from './components/reactQuestions/ArrayToTree1';
 import ArrayToTree2 from './components/reactQuestions/ArrayToTree2';
 import DomDepth from './components/reactQuestions/DomDepth';
-import FetchData from './components/reactQuestions/FetchData';
+// import FetchData from './components/reactQuestions/FetchData';
 import IncrementDecrement from './components/reactQuestions/IncrementDecrement';
 import CarData from './components/reactQuestions/CarData';
 import RandomColor from './components/reactQuestions/RandomColor';
@@ -10,6 +10,7 @@ import CardsBlock from './components/reactQuestions/CardsBlock';
 import Timer from './components/reactQuestions/Timer';
 
 import './App.scss';
+import HowManyTimes from './components/reactQuestions/howManyTimes';
 
 export default function App() {
   return (
@@ -18,13 +19,14 @@ export default function App() {
       <ArrayToString />
       <ArrayToTree1 />
       <ArrayToTree2 />
-      <FetchData />
+      {/* <FetchData /> */}
       <IncrementDecrement />
       <DomDepth />
       <CarData />
       <RandomColor />
       <CardsBlock />
       <Timer />
+      <HowManyTimes />
     </div>
   );
 }
