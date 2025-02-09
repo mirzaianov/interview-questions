@@ -1,6 +1,6 @@
 const values: number[] = [5, 7, 30, 1, 3];
 
-const asyncSort = async (nums: number[]) => {
+const asyncSort = async (nums: number[]): Promise<number[]> => {
   const sortedNums: number[] = [];
 
   const pushNum = (num: number) => sortedNums.push(num);
