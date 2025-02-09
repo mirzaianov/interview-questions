@@ -1,15 +1,27 @@
-const nums: number[] = [5, 7, 1, 3];
-const sortedNums: number[] = [];
+const values: number[] = [5, 7, 30, 1, 3];
 
-const asyncSort = (arr: number[]) => {
-  arr.forEach((num) => {
-    return new Promise<number>((resolve) => {
-      setTimeout(() => {
-        resolve(sortedNums.push(num));
-        console.log(sortedNums);
-      }, num);
+const asyncSort = async (nums: number[]) => {
+  const sortedNums: number[] = [];
+
+  const pushNum = (num: number) => sortedNums.push(num);
+
+  const promises = (arr: number[]): Promise<number>[] => {
+    return arr.map((num) => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(pushNum(num));
+        }, num);
+      });
     });
-  });
+  };
+
+  await Promise.all(promises(nums));
+
+  return sortedNums;
 };
 
-asyncSort(nums);
+(async () => {
+  const sortedNums = await asyncSort(values);
+
+  console.log(sortedNums);
+})();
