@@ -1,25 +1,29 @@
 // Quick sort with additional space
 
-function quickSort(arr) {
-  if (arr.length < 2) return arr;
+const quickSort = (arr: number[]): number[] => {
+  const len: number = arr.length;
 
-  const pivotIndex = Math.floor(arr.length / 2);
-  const pivot = arr[pivotIndex];
-  const smaller = [];
-  const bigger = [];
+  if (len < 2) return arr;
 
-  for (let i = 0; i < arr.length; i++) {
+  const pivotIndex: number = Math.floor(len / 2);
+  const pivot: number = arr[pivotIndex];
+  const left: number[] = [];
+  const right: number[] = [];
+
+  for (let i = 0; i < len; i += 1) {
     if (i === pivotIndex) continue;
 
-    if (arr[i] <= pivot) {
-      smaller.push(arr[i]);
+    const curr: number = arr[i];
+
+    if (curr <= pivot) {
+      left.push(curr);
     } else {
-      bigger.push(arr[i]);
+      right.push(curr);
     }
   }
 
-  return [...quickSort(smaller), pivot, ...quickSort(bigger)];
-}
+  return [...quickSort(left), pivot, ...quickSort(right)];
+};
 
 // Quick sort WITHOUT additional space
 
