@@ -3,9 +3,13 @@ const merge = (left: number[], right: number[]): number[] => {
 
   while (left.length && right.length) {
     if (left[0] < right[0]) {
-      result.push(left.shift()!);
+      const value = left.shift();
+
+      if (value !== undefined) result.push(value);
     } else {
-      result.push(right.shift()!);
+      const value = right.shift();
+
+      if (value !== undefined) result.push(value);
     }
   }
 
