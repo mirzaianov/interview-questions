@@ -1,18 +1,15 @@
-const bubbleSort = (array: number[]): number[] => {
-  const sortedArray: number[] = [...array];
+const bubbleSort = (nums: number[]): number[] => {
+  const res: number[] = [...nums];
 
-  for (let i = 0; i < sortedArray.length; i += 1) {
-    for (let j = 0; j < sortedArray.length - 1 - i; j += 1) {
-      if (sortedArray[j] > sortedArray[j + 1]) {
-        [sortedArray[j], sortedArray[j + 1]] = [
-          sortedArray[j + 1],
-          sortedArray[j],
-        ];
+  for (let i = 0; i < res.length; i += 1) {
+    for (let j = 0; j < res.length - 1 - i; j += 1) {
+      if (res[j] > res[j + 1]) {
+        [res[j], res[j + 1]] = [res[j + 1], res[j]];
       }
     }
   }
 
-  return sortedArray;
+  return res;
 };
 
 export default bubbleSort;
