@@ -69,4 +69,6 @@ const quickSort = (arr: number[]): number[] => {
 //   return left;
 // }
 
-console.log(quickSort([3, 2, 15, 1, 5, 3, 11, 0]));
+export default quickSort;
+
+// console.log(quickSort([3, 2, 15, 1, 5, 3, 11, 0]));
