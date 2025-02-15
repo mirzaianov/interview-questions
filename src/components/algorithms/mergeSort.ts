@@ -1,29 +1,34 @@
 const merge = (left: number[], right: number[]): number[] => {
-  const result: number[] = [];
+  const res: number[] = [];
 
   while (left.length && right.length) {
     if (left[0] < right[0]) {
       const value = left.shift();
 
-      if (value !== undefined) result.push(value);
+      if (value !== undefined) res.push(value);
     } else {
       const value = right.shift();
 
-      if (value !== undefined) result.push(value);
+      if (value !== undefined) res.push(value);
     }
   }
 
-  return [...result, ...left, ...right];
+  return [...res, ...left, ...right];
 };
 
 const mergeSort = (nums: number[]): number[] => {
-  if (nums.length <= 1) return nums;
+  const len: number = nums.length;
 
-  const center: number = Math.floor(nums.length / 2);
-  const left: number[] = nums.slice(0, center);
-  const right: number[] = nums.slice(center);
+  if (len <= 1) return nums;
+
+  const mid: number = Math.floor(len / 2);
+  const left: number[] = nums.slice(0, mid);
+  const right: number[] = nums.slice(mid);
 
   return merge(mergeSort(left), mergeSort(right));
 };
 
-console.log(mergeSort([3, 2, 15, 1, 5, 3, 11, 0]));
+export default mergeSort;
+
+// console.log(mergeSort([3, 2, 15, 1, 5, 3, 11, 0]));
+// console.log(mergeSort([3, 2, 15, 1, 10, 5, 3, 11, 0]));
